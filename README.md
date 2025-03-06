@@ -144,3 +144,9 @@
 - Dashboard do Cidadão
   - Visualização gráfica de valores de diversos produtos e serviços do open finance.
   - Valores, parâmetros técnicos de APIs referentes a  serviços de diferentes instituições.
+
+- Fases
+  1.  Disponibilizar canais de atendimento, produtos e serviços, além de valores e taxas.
+  2.  Consentimento do consumidor para compartilhamento de dados pessoais e financeiros.
+  3.  Serviços fornecidos pelo ecossistema ser  disponibilizados para o consumidor.
+  4.  Ampliação de produtos e serviços já existentes do ecossistema.
