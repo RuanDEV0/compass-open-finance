@@ -102,9 +102,9 @@
 ## Aprendizado
 
 - [x] Open Finance
-- [ ] DeFi
-- [ ] Fintech
-- [ ] LGPD (Lei Geral de Proteção de Dados)
+- [x] DeFi
+- [x] Fintech
+- [x] LGPD (Lei Geral de Proteção de Dados)
 
 ## Resumo
 
