@@ -20,3 +20,8 @@ book1.color = "white";
 
 console.log(book1);
 
+console.log(Math.max(12,34,4,32,1,54,2,1,23,10));
+
+let firstName = "Ruan";
+
+console.log(`Hey, my name is ${firstName}`);
