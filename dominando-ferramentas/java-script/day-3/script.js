@@ -1,17 +1,11 @@
-function createBook(title, author, pages, capters){
-    let book = {
-        bookTitle: title,
-        bookAuthor: author,
-        bookPages: pages,
-        bookCapters: capters,
-        printBook: function(){
-            console.log("printing.....")
-        }
-    }
-    return book;
+function CreateBook(title, author, pages, capters){
+    this.bookTitle = title;
+    this.bookAuthor = author; 
+    this.bookPages = pages;
+    this.bookCapters = capters;
 }
 
-const book1 = createBook(
+const book1 =  new CreateBook(
     "33 estratégias de guerra: Aprenda com as batalhas da história ...",
     " Robert Greene e Talita M. Rodrigues",
     560,
