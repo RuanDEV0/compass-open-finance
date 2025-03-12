@@ -1,11 +1,26 @@
-#  Repositório do Programa da Compass
+# Repositório do Programa Compass
 
-Este repositório contém todas as etapas do programa que estou participando. Abaixo estão os links para cada etapa:
+Bem-vindo ao repositório do **Programa Compass**! Aqui, se encontra todas as etapas que fazem parte dessa jornada. Cada link abaixo lhe encaminhará a uma parte esta jornada.
 
-## Etapas
-- [Etapa 1: Arrumando a Mala](https://github.com/RuanDEV0/compass-open-finance/blob/main/arrumando-a-mala/Arrumando-a-Mala.md)
-- [Etapa 2: Um Novo Horizonte](https://github.com/RuanDEV0/compass-open-finance/blob/main/um-novo-horizonte/Um-Novo-Horizonte.md)
-- [Etapa 3: Dominando Ferramentas](https://github.com/RuanDEV0/compass-open-finance/blob/main/dominando-ferramentas/dominando-ferramentas.md)
+##  Etapas do Programa
 
-## Como usar
-Navegue pelas pastas de cada etapa para ver os detalhes.
+### 1️ [Arrumando a Mala](https://github.com/RuanDEV0/compass-open-finance/blob/main/arrumando-a-mala/Arrumando-a-Mala.md)
+
+
+### 2️ [Um Novo Horizonte](https://github.com/RuanDEV0/compass-open-finance/blob/main/um-novo-horizonte/Um-Novo-Horizonte.md)
+
+
+### 3️ [Dominando Ferramentas](https://github.com/RuanDEV0/compass-open-finance/blob/main/dominando-ferramentas/dominando-ferramentas.md)
+
+
+### 4️  Um Companheiro Poderoso (indisponível)
+
+
+### 5️  Construindo Pontes (indisponível)
+
+
+### 6️  Nas Nuvens (indisponível)
+
+
+---
+
