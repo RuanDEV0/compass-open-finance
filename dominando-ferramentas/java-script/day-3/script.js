@@ -16,5 +16,7 @@ const book1 =  new CreateBook(
     }
 )
 
-console.log(book1)
+book1.color = "white";
+
+console.log(book1);
 
