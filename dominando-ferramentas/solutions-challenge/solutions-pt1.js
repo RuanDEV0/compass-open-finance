@@ -5,13 +5,13 @@ const prompt = user();
 
 let input = prompt("Enter elements array : ");
 // Remove colchetes da string de entrada do usuário
-let removeFirstColchete = input.replace("[", " ");
-let removeColchete = removeFirstColchete.replace("]", " ");
+input = input.replace("[", " ");
+input = input.replace("]", " ");
 
-let arrayFinal = removeColchete.split(",");
+input = input.split(",");
 
-if(!isNaN(sumArray(arrayFinal))){
-    console.log("Sum of elements: "+ sumArray(arrayFinal));
+if(!isNaN(sumArray(input))){
+    console.log("Sum of elements: "+ sumArray(input));
 }else{
     console.log("Value invalid detected!");
 }
@@ -41,4 +41,24 @@ function isPrimo(number){
     }
 
     return cont == 2 ? true : false;
+}
+
+
+// //## **3️⃣ Verificar se uma String é um Palíndromo** 
+// Em alguns casos não está ignorando acentos.
+
+let word = prompt("Enter string: ");
+console.log(word + " is palíndromo? "+ isPalindromo(word));
+
+function isPalindromo(parameter){
+    word = word.trim();
+    word = word.toLowerCase();
+
+    let array = word.split("");
+    let result = array.filter(strings => strings.replace(" ", ""));
+
+    let beforeReverse = result.join("");
+    let afterReverse = result.reverse().join("")
+
+    return beforeReverse == afterReverse ? true : false;
 }
