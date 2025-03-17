@@ -1,7 +1,7 @@
 const user = require("prompt-sync");
 const prompt = user();
 
-// ## **1️⃣ Somar Todos os Elementos de um Array Unidimensional**
+// // ## **1️⃣ Somar Todos os Elementos de um Array Unidimensional**
 
 let input = prompt("Enter elements array : ");
 // Remove colchetes da string de entrada do usuário
@@ -61,4 +61,31 @@ function isPalindromo(parameter){
     let afterReverse = result.reverse().join("")
 
     return beforeReverse == afterReverse ? true : false;
+}
+
+//## **4️⃣ Codificar o Jogo "Pedra, Papel, Tesoura"**
+
+let game = ["pedra", "papel", "tesoura"]
+let indexRandom = Math.floor(Math.random() * 3);
+let cpu = game[indexRandom];
+
+let usr  = prompt("Enter a choice: ");
+
+console.log("*CPU he chose "+ cpu + "*");
+console.log(winnerOfGame(usr, cpu));
+
+function winnerOfGame(userChoice, pc){
+    if(userChoice == pc){
+        return "draw";
+    }
+   switch(userChoice){
+    case "pedra":
+        return pc == "papel" ? "user lost" : "**** winner user ****";
+    case "papel":
+        return pc == "pedra" ? "**** winner user ****": "user lost";
+    case "tesoura":
+        return pc == "pedra" ? "user lost" : "**** winner user ****";
+    default:
+        return "error";
+   }
 }
