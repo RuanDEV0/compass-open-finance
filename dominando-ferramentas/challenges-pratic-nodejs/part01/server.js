@@ -1,4 +1,4 @@
-const { timeStamp } = require("node:console");
+const { timeStamp, error } = require("node:console");
 const {createServer, request} = require("node:http");
 const {URL} = require("node:url");
 
@@ -17,6 +17,35 @@ const server = createServer((request, response) => {
                 success: true,
                 timestamp: new Date().toISOString()
             }));
+        }else if(request.method == "GET" && url.pathname.startsWith("/is-prime-number")){
+
+            let array = url.pathname.split("/");
+            let param = array.pop();
+
+            if(param >= 1 && !isNaN(param) && array.length == 2){
+
+                let isPrime = function(parameter){
+                    let cont = 0;
+                    for(let i = 1; i <= parameter; i++){
+                        if(parameter % i == 0) cont++;
+                    }
+                
+                    return cont == 2 ? true : false;
+                }
+                
+                response.statusCode = 200;
+                response.end(JSON.stringify({isPrime: isPrime(param)}));
+
+
+            }else{
+                
+                response.statusCode = 400;
+                response.end(JSON.stringify({
+                    message: "invalid input",
+                    error: url.pathname
+                }));
+            }
+            
         }
 
     }catch(error){
