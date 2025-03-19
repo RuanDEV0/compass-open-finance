@@ -9,14 +9,17 @@ const server = createServer((request, response) => {
     response.setHeader("Content-Type", "application/json");
 
     try{
+
         const url = new URL(request.url, `http://${host}:${port}`);
 
         if(request.method === "GET" && url.pathname == "/health-check"){
+
             response.statusCode = 200;
             response.end(JSON.stringify({
                 success: true,
                 timestamp: new Date().toISOString()
             }));
+
         }else if(request.method == "GET" && url.pathname.startsWith("/is-prime-number")){
 
             let array = url.pathname.split("/");
@@ -42,13 +45,50 @@ const server = createServer((request, response) => {
                 response.statusCode = 400;
                 response.end(JSON.stringify({
                     message: "invalid input",
-                    error: url.pathname
                 }));
             }
             
+        }else if(request.method === "POST" && url.pathname === "/count"){
+
+            let body = "";
+
+            request.on('data', chunk => {
+                body += chunk.toString();
+            });
+
+            request.on('end', () => {
+                try {
+
+                    const parsed = body ? JSON.parse(body).incrementBy : undefined;
+
+                    if(isNaN(parsed) || parsed <= 0 || !Number.isInteger(parsed)){
+                        response.statusCode = 400;
+                        response.end(JSON.stringify({
+                            error: "Invalid input!"
+                        }))
+                    }else{
+
+                        response.statusCode = 200;
+                        response.end(JSON.stringify({ counter: parsed }));
+
+                    }
+
+                } catch (error) {
+                    response.statusCode = 400;
+                    response.end(JSON.stringify({ error: "Invalid JSON body" }));
+                }
+            });
+
+        }else{
+            response.statusCode = 404;
+            response.end(JSON.stringify({
+                message: "Route not found",
+                error: url.pathname
+            }));
         }
 
     }catch(error){
+
         console.log(error);
         response.statusCode = 500;
         response.end(JSON.stringify({error: "Internal Server Error"}));
