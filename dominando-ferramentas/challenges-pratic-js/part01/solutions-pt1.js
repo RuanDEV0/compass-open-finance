@@ -51,10 +51,10 @@ let word = prompt("Enter string: ");
 console.log(word + " is palíndromo? "+ isPalindromo(word));
 
 function isPalindromo(parameter){
-    word = word.trim();
-    word = word.toLowerCase();
+    parameter = parameter.trim();
+    parameter = parameter.toLowerCase();
 
-    let array = word.split("");
+    let array = parameter.split("");
     let result = array.filter(strings => strings.replace(" ", ""));
 
     let beforeReverse = result.join("");
@@ -68,8 +68,8 @@ function isPalindromo(parameter){
 let game = ["pedra", "papel", "tesoura"]
 let indexRandom = Math.floor(Math.random() * 3);
 let cpu = game[indexRandom];
-
-let usr  = prompt("Enter a choice: ");
+console.log("PEDRA / PAPEL / TESOURA")
+let usr  = prompt("Enter a choice: ").toLowerCase();
 
 console.log("*CPU he chose "+ cpu + "*");
 console.log(winnerOfGame(usr, cpu));
