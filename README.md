@@ -1,6 +1,6 @@
 # Repositório do Programa Compass
 
-Bem-vindo ao repositório do **Programa Compass**! Aqui, se encontra todas as etapas que fazem parte dessa jornada. Cada link abaixo lhe encaminhará a uma parte esta jornada.
+Todo o conteúdo desenvolvido em cada etapa.
 
 ##  Etapas do Programa
 
