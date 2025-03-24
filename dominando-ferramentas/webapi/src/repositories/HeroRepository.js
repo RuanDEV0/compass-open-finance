@@ -15,7 +15,15 @@ class HeroRepository{
 
         return all.find(({id}) => itemId === id);
     }
+    
+    async create(data){
+        const currentFile = await this._currentFileContent();
+        currentFile.push(data);
 
+        await writeFile(this.file, JSON.stringify(currentFile));
+
+        return data.id;
+    }
 }
 
 
