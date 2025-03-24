@@ -1,7 +1,7 @@
-const { readFile, writFile} = require('fs/promisses')
+const { readFile, writeFile} = require('fs/promises');
 
 class HeroRepository{
-    constructor({file}){
+    constructor({file}){    
         this.file = file;
     }
 
@@ -27,4 +27,4 @@ class HeroRepository{
 }
 
 
-module.export = HeroRepository;
+module.exports = HeroRepository;
