@@ -1,8 +1,1 @@
-[
-    {
-        "id": 1,
-        "name": "iron man",
-        "age": 45,
-        "power": "Tecnology"
-    }
-]
+[{"id":1,"name":"iron man","age":45,"power":"Tecnology"},{"id":1742911111771,"name":"Superytesman","age":34,"power":"Força"},{"id":1742911117666,"name":"Superytesman","age":34,"power":"Força"},{"id":1742911152365,"name":"Superytesman","age":34,"power":"Força"},{"id":1742911243083,"name":"testando","age":14,"power":"Teste power"},{"id":1742911270159,"name":"testando","age":14,"power":"Teste power"}]
