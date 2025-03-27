@@ -14,6 +14,8 @@
     "express": "^4.21.2",
     "nodemon": "^3.1.9",
     "sucrase": "^3.35.0"
-    
+  },
+  "dependencies": {
+    "mongoose": "^8.13.0"
   }
 }
