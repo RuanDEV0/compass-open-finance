@@ -5,13 +5,15 @@
   "main": "src/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/index.js",
-    "dev": "npx nodemon src/index.js"
+    "start": "node src/server.js",
+    "dev": "npx nodemon src/server.js"
   },
   "author": "RuanDEV0",
   "license": "ISC",
   "devDependencies": {
     "express": "^4.21.2",
-    "nodemon": "^3.1.9"
+    "nodemon": "^3.1.9",
+    "sucrase": "^3.35.0"
+    
   }
 }
