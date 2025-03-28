@@ -34,6 +34,22 @@ class HouseController{
 
         return response.json(houses);
     }
+
+    async destroy(request, response){
+        const {id} = request.params;
+        const {user_id} = request.headers;
+
+        const user = await User.findById(user_id);
+        const house = await House.findById(id);
+
+        if(String(user._id) !== String(house.user)){
+            return response.status(401).json({error: 'user not authorized!'});
+        }
+
+        await House.findByIdAndDelete(id);
+
+        return response.send();
+    }
 }
 
 export default new HouseController();
