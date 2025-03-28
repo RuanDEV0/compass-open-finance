@@ -1,3 +1,4 @@
+import { isUndefined } from 'util';
 import House from '../model/House';
 import User from '../model/User';
 
@@ -22,8 +23,15 @@ class HouseController{
         return response.json(house);
     }
 
-    async indexAll(request, response){
-        const houses = await House.find();
+    async filter(request, response){
+        const status = request.query.status;
+        let houses;
+        if(status === undefined){
+            houses = await House.find();
+            return response.json(houses);
+        }
+        houses = await House.find({status});
+
         return response.json(houses);
     }
 }
