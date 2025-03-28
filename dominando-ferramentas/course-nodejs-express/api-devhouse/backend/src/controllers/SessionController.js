@@ -22,6 +22,12 @@ class SessionController{
 
         return response.json(user);
     }
+
+    async index(request, response){
+        const users = await User.find();
+
+        return response.json(users);
+    }
 }
 
 

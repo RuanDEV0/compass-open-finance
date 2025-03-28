@@ -1,6 +1,9 @@
 import House from '../model/House';
+import User from '../model/User';
 
 class HouseController{
+
+
     async store(request, response){
         const { filename } = request.file;
         const {title, description, price, status, location} = request.body;
@@ -17,6 +20,11 @@ class HouseController{
         });
 
         return response.json(house);
+    }
+
+    async indexAll(request, response){
+        const houses = await House.find();
+        return response.json(houses);
     }
 }
 

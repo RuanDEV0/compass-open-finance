@@ -10,7 +10,9 @@ const routes = new Router();
 const upload = multer(uploadConfig);
 
 routes.post('/sessions', SessionController.store);
+routes.get('/sessions', SessionController.index);
 
 routes.post('/houses', upload.single('thumbnail'), HouseController.store);
+routes.get('/houses', HouseController.indexAll);
 
 export default routes;
