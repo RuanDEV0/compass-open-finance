@@ -7,12 +7,20 @@ const HouseSchema = new Schema({
     price: Number,
     locatin: String,
     status: Boolean,
-    use: {  
+    user: {  
         type: Schema.Types.ObjectId,
         ref: 'User'
     }
 
+}, {
+    toJSON: {
+        virtuals: true
+    }
 });
+
+HouseSchema.virtual('thumbnail_url').get(function(){
+    return `http://localhost:3333/files/${this.thumbnail}`;
+})
 
 
 export default model('House', HouseSchema);

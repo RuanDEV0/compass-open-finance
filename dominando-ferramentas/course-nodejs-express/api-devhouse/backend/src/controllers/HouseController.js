@@ -2,10 +2,21 @@ import House from '../model/House';
 
 class HouseController{
     async store(request, response){
-        console.log(request.body);
-        console.log(request.file);
+        const { filename } = request.file;
+        const {title, description, price, status, location} = request.body;
+        const {user_id} = request.headers;
 
-        return response.json({message: 'sucessful'});
+        const house = await House.create({
+            user: user_id,
+            thumbnail: filename,
+            title,
+            description,
+            price,
+            status,
+            location
+        });
+
+        return response.json(house);
     }
 }
 
