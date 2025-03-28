@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/server.js",
-    "dev": "npx nodemon src/server.js"
+    "predev": "docker compose up -d",
+    "dev": "npx nodemon src/server.js",
+    "stop": "docker compose down"
   },
   "author": "RuanDEV0",
   "license": "ISC",
