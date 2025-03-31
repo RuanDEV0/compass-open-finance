@@ -1,4 +1,4 @@
-# Use root/example as user/password credentials
+
 version: '3.1'
 
 services:
@@ -23,23 +23,3 @@ services:
       ME_CONFIG_MONGODB_ADMINPASSWORD: admin
       ME_CONFIG_MONGODB_URL: mongodb://admin:admin@mongo:27017/
       ME_CONFIG_BASICAUTH: false
-
-
-
-# version: '3.1'
-
-# services:
-#   mongodb:
-#     image: mongo
-#     container_name: mongodb
-#     restart: always
-#     environment:
-#       MONGO_INITDB_ROOT_USERNAME: admin
-#       MONGO_INITDB_ROOT_PASSWORD: admin
-#     ports:
-#       - "27017:27017"
-#     volumes:
-#       - mongo-data:/data/db
-
-# volumes:
-#   mongo-data:
