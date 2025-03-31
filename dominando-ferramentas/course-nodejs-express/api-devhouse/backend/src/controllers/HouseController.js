@@ -1,10 +1,21 @@
 import House from '../model/House';
 import User from '../model/User';
-
+import * as Yup from 'yup';
 class HouseController{
 
 
     async store(request, response){
+        const schema = Yup.object().shape({
+            description: Yup.string().required(),
+            price: Yup.number().required(),
+            location: Yup.string().required(),
+            status: Yup.boolean().required()
+        });
+
+        if(!(await schema.isValid(request.body))){
+            return response.status(400).json({error: 'filds invalids!'});
+        }
+
         const { filename } = request.file;
         const {title, description, price, status, location} = request.body;
         const {user_id} = request.headers;
@@ -51,6 +62,17 @@ class HouseController{
     }
 
     async update(request, response){
+        const schema = Yup.object().shape({
+            description: Yup.string().required(),
+            price: Yup.number().required(),
+            location: Yup.string().required(),
+            status: Yup.boolean().required()
+        });
+
+        if(!(await schema.isValid(request.body))){
+            return response.status(400).json({error: 'filds invalids!'});
+        }
+
         const { filename } =  request.file;
         const {id}  = request.params;
         const{user_id} = request.headers;

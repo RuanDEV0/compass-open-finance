@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "cors": "^2.8.5",
-    "mongoose": "^8.13.0"
+    "mongoose": "^8.13.0",
+    "yup": "^1.6.1"
   }
 }

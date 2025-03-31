@@ -18,7 +18,7 @@ class ReserveController{
         }
 
         if(String(user._id) === String(house.user)){
-            return response.status(400).json({error: 'user created this house'});
+            return response.status(401).json({error: 'user created this house'});
         }
 
         const reserve = await Reserve.create({

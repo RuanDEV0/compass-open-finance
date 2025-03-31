@@ -12,6 +12,15 @@ import User from '../model/User'
 
 class SessionController{
     async store(request, response){
+
+        const schema = Yup.object().shape({
+            email: Yup.string().email()
+        });
+
+        if(!(await schema.isValid(request.body))){
+            return response.status(400).json({error: 'email formt invalid!'});
+        }
+
         const { email } = request.body;
 
         let user = await User.findOne({ email });
