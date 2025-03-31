@@ -1,4 +1,3 @@
-import { isUndefined } from 'util';
 import House from '../model/House';
 import User from '../model/User';
 
@@ -47,6 +46,32 @@ class HouseController{
         }
 
         await House.findByIdAndDelete(id);
+
+        return response.send();
+    }
+
+    async update(request, response){
+        const { filename } =  request.file;
+        const {id}  = request.params;
+        const{user_id} = request.headers;
+        const{description, title, location, price, status} = request.body;
+
+        const user = await User.findById(user_id);
+        const house = await House.findById(id);
+
+        if(String(user._id) !== String(house.user)){
+            return response.status(401).json({error: 'user session not authorized!'});
+        }
+
+        await House.updateOne({ _id: id }, {
+            user: user_id,
+            thumbnail: filename,
+            description,
+            title,
+            price,
+            location,
+            status
+        });
 
         return response.send();
     }

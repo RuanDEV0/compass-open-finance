@@ -15,5 +15,6 @@ routes.get('/sessions', SessionController.index);
 routes.post('/houses', upload.single('thumbnail'), HouseController.store);
 routes.get('/houses', HouseController.filter);
 routes.delete('/houses/:id', HouseController.destroy);
+routes.put('/houses/:id', upload.single('thumbnail'), HouseController.update);
 
 export default routes;
