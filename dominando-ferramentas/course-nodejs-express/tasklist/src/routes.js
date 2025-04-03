@@ -8,8 +8,7 @@ routes.post('/users', UserController.store);
 
 routes.post('/sessions', SessionController.store);
 
-routes.use(authAutorization);
-routes.put('/users', UserController.update);
+routes.put('/users', authAutorization, UserController.update);
 
 
 export default routes;

@@ -20,6 +20,7 @@
       return next();
 
     }catch(error){
+      console.log(error)
       return response.status(401).json({error: 'token invalid'})
     }
  }
