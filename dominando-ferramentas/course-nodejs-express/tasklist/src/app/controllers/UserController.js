@@ -2,7 +2,6 @@ import User from '../model/User'
 
 class UserController{
     async store(request, response){
-
         const userExists = await User.findOne({
             where: {email: request.body.email}
         });
