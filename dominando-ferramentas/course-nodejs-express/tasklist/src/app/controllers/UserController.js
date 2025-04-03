@@ -17,6 +17,11 @@ class UserController{
             email
         });
     }
+
+    async update(request, response){
+        console.log(request.userId);
+        return response.json({active: true});
+    }
 }
 
 export default new UserController();
