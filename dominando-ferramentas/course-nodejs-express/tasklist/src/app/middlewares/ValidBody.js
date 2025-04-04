@@ -3,7 +3,7 @@ import * as Yup from 'yup';
 
 class ValidBody{
 
-    async checkPost(request, response, next){
+    async checkPostUser(request, response, next){
         console.log(request.body);
         const schema = Yup.object().shape({
             name: Yup.string().required(),
@@ -18,9 +18,9 @@ class ValidBody{
         return next();
     }
 
-    async checkPut(request, response, next){
+    async checkPutUser(request, response, next){
         const schema = Yup.object().shape({
-            nome: Yup.string(),
+            name: Yup.string(),
             email: Yup.string().email(),
             oldPassword: Yup.string().min(6),
             password: Yup.string().min(6).when('oldPassword', (oldPassword, field) => {
@@ -34,6 +34,17 @@ class ValidBody{
         if(!(await schema.isValid(request.body))){
             return response.status(400).json({error: 'validation failed in body of put'})
         }
+
+        return next();
+    }
+
+    async checkPostTask(request, response, next){
+        const schema = Yup.object().shape({
+            task: Yup.string().required()
+        })
+
+        if(!(await schema.isValid(request.body))) 
+            return response.status(400).json({error: 'value fields invalid!'});
 
         return next();
     }
