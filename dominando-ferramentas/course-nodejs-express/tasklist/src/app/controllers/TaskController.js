@@ -13,10 +13,17 @@ class TaskController {
     }
 
     async index(request, response){
+
+        let { check } = request.query;
+
+        if(!check){
+            check = false;
+        }
+
         const tasks = await Task.findAll({
             where: {
                 user_id: request.userId,
-                check: false
+                check
             }
         });
 
@@ -27,7 +34,6 @@ class TaskController {
         const {  id } = request.params;
         const { check } = request.body;
 
-        console.log(id)
         const task = await Task.findByPk(id);
 
         if(!task){
