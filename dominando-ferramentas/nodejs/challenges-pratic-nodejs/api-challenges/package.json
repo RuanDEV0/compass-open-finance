@@ -1,0 +1,23 @@
+{
+  "name": "api-challenges",
+  "version": "1.0.1",
+  "description": "api based in challenges part1 and part2",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server.js",
+    "dev": "npx nodemon src/server.js"
+  },
+  "author": "RuanDev",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.24.0",
+    "eslint": "^9.24.0",
+    "globals": "^16.0.0",
+    "nodemon": "^3.1.9",
+    "sucrase": "^3.35.0"
+  }
+}
