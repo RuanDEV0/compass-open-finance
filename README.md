@@ -10,7 +10,7 @@ Todo o conteúdo desenvolvido em cada etapa.
 ### 2️ [Um Novo Horizonte](https://github.com/RuanDEV0/compass-open-finance/blob/main/um-novo-horizonte/Um-Novo-Horizonte.md)
 
 
-### 3️ Dominando Ferramentas (desenvolvendo)
+### 3️ [Dominando Ferramentas](https://github.com/RuanDEV0/compass-open-finance/blob/main/dominando-ferramentas/dominando-ferramentas.md))
 
 
 ### 4️  Um Companheiro Poderoso (indisponível)
