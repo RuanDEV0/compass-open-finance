@@ -3,16 +3,17 @@ const routes = new Router();
 import UserController from './app/controllers/UserController';
 import SessionController from './app/controllers/SessionController';
 import authAutorization from './app/middlewares/auth';
-import ValidBody from './app/middlewares/ValidBody';
 import TaskController from './app/controllers/TaskController';
+import TaskValidate from './app/middlewares/TaskValidate';
+import UserValidate from './app/middlewares/UserValidate';
 
-routes.post('/users', ValidBody.checkPostUser, UserController.store);
+routes.post('/users', UserValidate.validateBodyPost, UserController.store);
 
 routes.post('/sessions', SessionController.store);
 
-routes.put('/users', ValidBody.checkPutUser, authAutorization, UserController.update);
+routes.put('/users', UserValidate.validateBodyPut, authAutorization, UserController.update);
 
-routes.post('/tasks', ValidBody.checkPostTask, authAutorization, TaskController.store);
+routes.post('/tasks', TaskValidate.validateBodyPost, authAutorization, TaskController.store);
 routes.get('/tasks', authAutorization, TaskController.index);
 routes.put('/tasks/:id', authAutorization, TaskController.update);
 routes.delete('/tasks/:id', authAutorization, TaskController.destroy);

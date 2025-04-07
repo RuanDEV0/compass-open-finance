@@ -1,9 +1,8 @@
-import * as Yup from 'yup';
+  import * as Yup from 'yup';
+  
+  class UserValidate{
 
-
-class ValidBody{
-
-    async checkPostUser(request, response, next){
+    async validateBodyPost(request, response, next){
         console.log(request.body);
         const schema = Yup.object().shape({
             name: Yup.string().required(),
@@ -18,7 +17,7 @@ class ValidBody{
         return next();
     }
 
-    async checkPutUser(request, response, next){
+    async validateBodyPut(request, response, next){
         const schema = Yup.object().shape({
             name: Yup.string(),
             email: Yup.string().email(),
@@ -37,16 +36,6 @@ class ValidBody{
 
         return next();
     }
+  }
 
-    async checkPostTask(request, response, next){
-        const schema = Yup.object().shape({
-            task: Yup.string().required()
-        })
-
-        if(!(await schema.isValid(request.body))) 
-            return response.status(400).json({error: 'value fields invalid!'});
-
-        return next();
-    }
-}
-export default new ValidBody();
+  export default new UserValidate();
